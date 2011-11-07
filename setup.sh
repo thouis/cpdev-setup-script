@@ -16,7 +16,7 @@ import glob
 wxdirs = sorted(glob.glob('/usr/local/lib/wxPython-unicode-2.8*/lib/python2.7'))
 assert len(wxdirs) > 0, "No directories matching %s found!" % ('/usr/local/lib/wxPython-unicode-2.8*/lib/python2.7')
 dest = os.path.join(os.getenv('VIRTUAL_ENV'), 'lib', 'python2.7', 'site-packages', 'wxredirect.pth')
-open(dest, 'w').write("import site; site.addsitedir('%s')\n" % (wxdirs[1]))
+open(dest, 'w').write("import site; site.addsitedir('%s')\n" % (wxdirs[-1]))
 sys.exit(0)
 EOF
 rc=$?
