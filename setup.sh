@@ -3,7 +3,7 @@
 # TODO: check for virtualenv
 # TODO: verify python is universal 32+64 bit
 
-# Clear a bunch of environment that Brew set up, but that breaks the build
+# Clear a bunch of environment that Brew set up, but that break the scipy build
 unset CFLAGS CXXFLAGS LDFLAGS
 
 virtualenv -p /Library/Frameworks/Python.framework/Versions/2.7/bin/python --no-site-packages ${1}/cpdev
