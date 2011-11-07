@@ -3,12 +3,14 @@
 # TODO: check for virtualenv
 # TODO: verify python is universal 32+64 bit
 
+set
+exit 1
+
 virtualenv -p /Library/Frameworks/Python.framework/Versions/2.7/bin/python --no-site-packages ${1}/cpdev
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
 fi
-
 
 . ${1}/cpdev/bin/activate
 cd ${1}/cpdev/bin
@@ -20,14 +22,14 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-pip install -U pip # to get git+https
+./pip install -U pip # to get git+https
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
 # put in the wxredirect.pth
-python <<EOF
+./python <<EOF
 import os
 import os.path
 import glob
