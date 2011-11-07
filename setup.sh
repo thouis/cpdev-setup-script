@@ -3,8 +3,8 @@
 # TODO: check for virtualenv
 # TODO: verify python is universal 32+64 bit
 
-virtualenv -p /Library/Frameworks/Python.framework/Versions/2.7/bin/python --no-site-packages #{name}/cpdev
-. #{name}/cpdev/bin/activate
+virtualenv -p /Library/Frameworks/Python.framework/Versions/2.7/bin/python --no-site-packages ${1}/cpdev
+. ${1}/cpdev/bin/activate
 
 pip install -U pip # to get git+https
 
