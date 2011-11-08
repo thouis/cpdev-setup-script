@@ -52,15 +52,27 @@ if [[ $rc != 0 ]] ; then
 fi
 
 
-./pip install scipy
-rc=$?
+# ./pip install scipy
+# rc=$?
+# if [[ $rc != 0 ]] ; then
+#     exit $rc
+# fi
+
+
+./pip install PIL
 if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
 
-./pip install PIL
-PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:`brew --prefix`/lib/pkgconfig ./python32 ./pip install git+https://github.com/matplotlib/matplotlib.git@a9f3f3a507
+# PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:`brew --prefix`/lib/pkgconfig ./python32 ./pip install git+https://github.com/matplotlib/matplotlib.git@a9f3f3a507
+# rc=$?
+# if [[ $rc != 0 ]] ; then
+#     exit $rc
+# fi
+
+
+./pip install 'svn+http://pylibtiff.googlecode.com/svn/trunk'
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
@@ -73,8 +85,9 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+
 # make sure we find mysql_config in the brew install
-PATH=`brew --prefix`/bin:$PATH ./pip install MySQLdb
+PATH=`brew --prefix`/bin:$PATH ./pip install MySQL-python
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
