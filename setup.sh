@@ -59,10 +59,10 @@ fi
 # fi
 
 
-./pip install PIL
-if [[ $rc != 0 ]] ; then
-    exit $rc
-fi
+# ./pip install PIL
+# if [[ $rc != 0 ]] ; then
+#     exit $rc
+# fi
 
 
 # PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:`brew --prefix`/lib/pkgconfig ./python32 ./pip install git+https://github.com/matplotlib/matplotlib.git@a9f3f3a507
@@ -72,11 +72,11 @@ fi
 # fi
 
 
-./pip install 'svn+http://pylibtiff.googlecode.com/svn/trunk'
-rc=$?
-if [[ $rc != 0 ]] ; then
-    exit $rc
-fi
+# ./pip install 'svn+http://pylibtiff.googlecode.com/svn/trunk'
+# rc=$?
+# if [[ $rc != 0 ]] ; then
+#     exit $rc
+# fi
 
 
 HDF5_DIR=`brew --prefix libhdf5-universal` ./pip install h5py
