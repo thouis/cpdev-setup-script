@@ -60,7 +60,7 @@ fi
 
 
 ./pip install PIL
-PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:/usr/local/lib/pkgconfig ./python32 ./pip install git+https://github.com/matplotlib/matplotlib.git@a9f3f3a507
+PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:`brew --prefix`/lib/pkgconfig ./python32 ./pip install git+https://github.com/matplotlib/matplotlib.git@a9f3f3a507
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
@@ -68,6 +68,13 @@ fi
 
 
 HDF5_DIR=`brew --prefix libhdf5-universal` ./pip install h5py
+rc=$?
+if [[ $rc != 0 ]] ; then
+    exit $rc
+fi
+
+# make sure we find mysql_config in the brew install
+PATH=`brew --prefix`/bin:$PATH ./pip install MySQLdb
 rc=$?
 if [[ $rc != 0 ]] ; then
     exit $rc
